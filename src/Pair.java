@@ -25,20 +25,20 @@ public class Pair<K, V> implements Map.Entry<K, V> {
         return value;
     }
 
-    boolean isDeleted() {
+    public boolean isDeleted() {
         return deleted;
     }
 
-    void deletePair() {
+    public void deletePair() {
         this.deleted = true;
     }
 
     @Override
     public String toString() {
-        return "\nPair{" +
+        return "Pair{" +
                 "key=" + key +
                 ", value=" + value +
                 ", deleted=" + deleted +
-                '}';
+                '}'+"\n";
     }
 }
