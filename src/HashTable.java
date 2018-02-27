@@ -24,8 +24,7 @@ public class HashTable<K, V> implements Map<K, V> {
             count++;
         }
         createNewArray();
-        this.put(k, v);
-        throw new IllegalArgumentException();
+        return this.put(k,v);
     }
 
     private void createNewArray(){

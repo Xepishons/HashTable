@@ -3,6 +3,7 @@ import org.junit.Test;
 import java.lang.reflect.Array;
 import java.util.*;
 import java.util.logging.Logger;
+
 import static junit.framework.TestCase.assertFalse;
 import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -30,6 +31,13 @@ public class Tests {
         HashTableT3.put(4, "D");
         HashTableT3.put(5, "E");
         logger.info("TABLE_3:\n" + HashTableT3.toString());
+
+        HashTable<Integer, String> HashTableT4 = new HashTable();
+        for (int i = 0; i < 66; i++) {
+            HashTableT4.put(i, "qwe" + i);
+        }
+        System.out.println(HashTableT4);
+        System.out.println("HashTableT4.size "+HashTableT4.size());
     }
 
     @Test
@@ -43,11 +51,11 @@ public class Tests {
     @Test
     public void get() {
         HashTable<String, Integer> HashTable = new HashTable();
-        HashTable.put("Kate",22);
-        HashTable.put("Jim",1);
-        HashTable.put("Natan",2);
-        HashTable.put("Vladimir",99);
-        HashTable.put("Anton",-1);
+        HashTable.put("Kate", 22);
+        HashTable.put("Jim", 1);
+        HashTable.put("Natan", 2);
+        HashTable.put("Vladimir", 99);
+        HashTable.put("Anton", -1);
         assertEquals(new Integer(22), HashTable.get("Kate"));
         assertEquals(new Integer(-1), HashTable.get("Anton"));
         assertEquals(new Integer(99), HashTable.get("Vladimir"));
@@ -55,7 +63,7 @@ public class Tests {
     }
 
     @Test
-    public void size(){
+    public void size() {
         HashTable<Integer, String> HashTable = new HashTable();
         HashTable.put(1, "A");
         HashTable.put(2, "B");
@@ -66,7 +74,7 @@ public class Tests {
     }
 
     @Test
-    public void isEmpty(){
+    public void isEmpty() {
         HashTable<Integer, String> HashTable = new HashTable();
         assertEquals(true, HashTable.isEmpty());
 
@@ -83,7 +91,7 @@ public class Tests {
     }
 
     @Test
-    public void containsKey(){
+    public void containsKey() {
         HashTable<Integer, String> HashTable = new HashTable();
         HashTable.put(1, "A");
         HashTable.put(2, "B");
@@ -97,7 +105,7 @@ public class Tests {
     }
 
     @Test
-    public void containsValue(){
+    public void containsValue() {
         HashTable<Integer, String> HashTable = new HashTable();
         HashTable.put(1, "A");
         HashTable.put(2, "B");
@@ -111,7 +119,7 @@ public class Tests {
     }
 
     @Test
-    public void putAll(){
+    public void putAll() {
         HashTable<Integer, String> HashTable = new HashTable();
         Map map = new HashMap();
         map.put(1, "A");
@@ -126,7 +134,7 @@ public class Tests {
     }
 
     @Test
-    public void clear(){
+    public void clear() {
         HashTable<Integer, String> HashTable = new HashTable();
         HashTable.put(1, "A");
         HashTable.put(2, "B");
@@ -138,9 +146,9 @@ public class Tests {
     }
 
     @Test
-    public void keySet(){
+    public void keySet() {
         HashTable<Integer, String> HashTable = new HashTable();
-        HashSet  set = new HashSet();
+        HashSet set = new HashSet();
         HashTable.put(1, "A");
         HashTable.put(2, "B");
         HashTable.put(3, "C");
@@ -155,7 +163,7 @@ public class Tests {
     }
 
     @Test
-    public void values(){
+    public void values() {
         HashTable<Integer, String> HashTable = new HashTable();
         ArrayList arrayList = new ArrayList();
         HashTable.put(1, "A");
@@ -172,7 +180,7 @@ public class Tests {
     }
 
     @Test
-    public void entrySet(){
+    public void entrySet() {
         HashTable<Integer, String> HashTable = new HashTable();
         HashTable.put(1, "A");
         HashTable.put(2, "B");
