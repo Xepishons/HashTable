@@ -36,8 +36,6 @@ public class Tests {
         for (int i = 0; i < 66; i++) {
             HashTableT4.put(i, "qwe" + i);
         }
-        System.out.println(HashTableT4);
-        System.out.println("HashTableT4.size "+HashTableT4.size());
     }
 
     @Test
